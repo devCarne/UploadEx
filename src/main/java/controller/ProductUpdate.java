@@ -4,7 +4,6 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import dao.BookProductDAO;
 import dto.BookProductDTO;
-import lombok.SneakyThrows;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +15,7 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 
 @WebServlet("/updateQuery")
-public class UpdateQuery extends HttpServlet {
+public class ProductUpdate extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

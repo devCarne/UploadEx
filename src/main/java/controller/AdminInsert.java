@@ -1,6 +1,7 @@
 package controller;
 
-import dao.BookProductDAO;
+import dao.AdminDAO;
+import dto.AdminDTO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,27 +10,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 
-@WebServlet("/deleteQuery")
-public class DeleteQuery extends HttpServlet {
+@WebServlet("/adminInsert")
+public class AdminInsert extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
-        BookProductDAO dao = new BookProductDAO();
         PrintWriter out = resp.getWriter();
 
-        String code = req.getParameter("delCode");
-        System.out.println(code);
-        try {
-            dao.delete(code);
-            out.println("<script>alert('상품 삭제가 완료되었습니다.'); location.href='productList.jsp';</script>");
-            out.close();
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        AdminDTO admin = new AdminDTO(req.getParameter("id"), req.getParameter("pw"), req.getParameter("name"));
+
+        AdminDAO dao = new AdminDAO();
+        dao.insert(admin);
+
+        out.println("<script>alert('관리자 등록이 완료되었습니다.'); location.href='adminMain.jsp';</script>");
+        out.close();
     }
 }

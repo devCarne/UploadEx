@@ -5,7 +5,7 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<form>
+<form method="post">
     <table border="1">
         <tr>
             <td colspan="2">관리자 로그인</td><td rowspan="3"><input type="submit" formaction="adminLogin" value="로그인"></td>
@@ -18,7 +18,7 @@
         </tr>
     </table>
 </form>
-<form>
+<form method="post">
     <table border="1">
         <tr>
             <td colspan="2">회원 로그인</td><td rowspan="3"><input type="submit" formaction="memberLogin" value="로그인"></td>

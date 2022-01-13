@@ -10,11 +10,24 @@
     pageContext.setAttribute("list", list);
 %>
 <html>
+<style>
+    #listTable {
+        width: 40%;
+        border: solid gray 1px;
+        margin: 0 30%;
+        text-align: center;
+    }
+</style>
 <head>
     <title>Title</title>
 </head>
 <body>
-    <table border="1">
+<jsp:include page="frame/header.jsp"/>
+<section>
+    <div id="pageTitle">
+        <h2>상품 목록</h2>
+    </div>
+    <table id="listTable" border="1">
         <tr>
             <th>코드</th><th>제목</th><th>가격</th><th>저자</th><th>출판사</th><th>이미지</th>
         </tr>
@@ -24,5 +37,7 @@
                 </tr>
             </c:forEach>
     </table>
+</section>
+<jsp:include page="frame/footer.jsp"/>
 </body>
 </html>

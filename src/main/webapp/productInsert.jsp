@@ -3,9 +3,13 @@
 <style>
     #productInsertTable {
         width: 20%;
-        height: 40%;
+        height: 30%;
         border: solid gray 1px;
         margin: 0 40%;
+        text-align: center;
+    }
+
+    h2 {
         text-align: center;
     }
 </style>
@@ -13,9 +17,8 @@
     <title>Title</title>
 </head>
 <body>
-<jsp:include page="frame/header.jsp"/>
 <section>
-    <div id="pageTitle">
+    <div>
         <h2>상품 등록</h2>
     </div>
     <form method="post" enctype="multipart/form-data">
@@ -42,16 +45,13 @@
                 <td>이미지</td><td><input type="file" name="image" id="imabe"></td>
             </tr>
             <tr>
-                <td colspan="2"><input type="submit" onclick="return checkInputData()" formaction="insertQuery" value="등록"> <input type="submit" formaction="select.jsp" value="목록조회"></td>
+                <td colspan="2"><input type="submit" onclick="return checkInputData()" formaction="insertQuery" value="등록"></td>
             </tr>
         </table>
     </form>
 </section>
-<jsp:include page="frame/footer.jsp"/>
 </body>
 <script>
-    document.getElementById("name").focus();
-
     function checkInputData() {
         if(document.getElementById("name").value.length === 0) {
             alert("이름 입력해주세요.");

@@ -50,6 +50,7 @@
     }
     section {
         height: 800px;
+        overflow: hidden;
     }
 </style>
 <head>
@@ -62,8 +63,7 @@
 <c:if test="${sessionScope.grade eq '관리자'}">
 <div id="adminNav">
     <ul>
-        <li><a href="productInsert.jsp">상품등록</a></li>
-        <li><a href="productList.jsp">상품조회</a></li>
+        <li><a href="productList.jsp?page=1">상품조회</a></li>
         <li><a href="adminSignIn.jsp">관리자 가입</a></li>
         <li><a href="adminMain.jsp">홈으로</a></li>
     </ul>
@@ -74,7 +74,7 @@
 <c:if test="${sessionScope.grade eq '회원'}">
     <div id="memberNav">
         <ul>
-            <li><a href="memberProductList.jsp">상품조회</a></li>
+            <li><a href="memberProductList.jsp?page=1">상품조회</a></li>
             <li><a href="memberUpdate.jsp">내 정보</a></li>
             <li><a href="memberMain.jsp">홈으로</a></li>
         </ul>

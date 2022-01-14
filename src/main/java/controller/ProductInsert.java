@@ -40,7 +40,7 @@ public class ProductInsert extends HttpServlet {
         BookProductDAO dao = new BookProductDAO();
         dao.insert(book);
 
-        out.println("<script>alert('상품 등록이 완료되었습니다.'); location.href='index.jsp';</script>");
+        out.println("<script>alert('상품 등록이 완료되었습니다.'); location.href='productList.jsp?page=1';</script>");
         out.close();
     }
 }

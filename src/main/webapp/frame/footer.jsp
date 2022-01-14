@@ -2,7 +2,6 @@
 <html>
 <style>
     #footer {
-        float: bottom;
         height: 50px;
         line-height: 50px;
         background-color: lavender;

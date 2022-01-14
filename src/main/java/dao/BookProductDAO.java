@@ -41,7 +41,7 @@ public class BookProductDAO implements IBookProductDAO {
     }
 
     @Override
-    public BookProductDTO select(String code) throws SQLException, ClassNotFoundException {
+    public BookProductDTO select(String code) {
 
         String sql = "SELECT * FROM PRODUCT_BOOK WHERE CODE = '" + code + "'";
 
@@ -58,6 +58,9 @@ public class BookProductDAO implements IBookProductDAO {
             book.setImage(rs.getString("IMAGE"));
 
             return book;
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return null;
         }
     }
     @Override
@@ -82,7 +85,7 @@ public class BookProductDAO implements IBookProductDAO {
     }
 
     @Override
-    public ArrayList<BookProductDTO> getList() throws SQLException, ClassNotFoundException {
+    public ArrayList<BookProductDTO> getList() {
 
         String sql = "SELECT * FROM PRODUCT_BOOK";
 
@@ -104,6 +107,9 @@ public class BookProductDAO implements IBookProductDAO {
                 books.add(book);
             }
             return books;
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 

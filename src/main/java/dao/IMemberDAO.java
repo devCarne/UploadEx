@@ -11,14 +11,18 @@ public interface IMemberDAO {
 
     Connection getConnection() throws ClassNotFoundException, SQLException;
 
-    int registMember(MemberDTO member) throws SQLException, ClassNotFoundException;
+    MemberDTO login(String id, String pw);
 
-    int updateMember(MemberDTO member) throws SQLException, ClassNotFoundException;
+    boolean insert(MemberDTO member) throws SQLException, ClassNotFoundException;
 
-    ArrayList<MemberDTO> getList() throws SQLException, ClassNotFoundException;
+    MemberDTO select(String id);
 
-    void deleteMember(String id) throws SQLException, ClassNotFoundException;
-
-    int checkLogin(String id, String pw) throws SQLException, ClassNotFoundException;
+//    int updateMember(MemberDTO member) throws SQLException, ClassNotFoundException;
+//
+//    ArrayList<MemberDTO> getList() throws SQLException, ClassNotFoundException;
+//
+//    void deleteMember(String id) throws SQLException, ClassNotFoundException;
+//
+//    int checkLogin(String id, String pw) throws SQLException, ClassNotFoundException;
 
 }
